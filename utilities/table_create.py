@@ -1,4 +1,4 @@
-from db_config import connect_to_db, connect_ur_db
+from db_config import connect_to_db
 
 def create_month_table(month_name):
     con=connect_to_db()
