@@ -1,4 +1,4 @@
-from db_config import connect_to_db, connect_ur_db
+from db_config import connect_to_db
 from utilities.table_create import create_month_table, create_User_table
 
 def add_transaction(month_name, txn_id,date_str, time_str, amount):
