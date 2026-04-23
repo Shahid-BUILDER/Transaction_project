@@ -1,4 +1,4 @@
-from db_config import connect_to_db, connect_ur_db
+from db_config import connect_to_db
 from tabulate import tabulate
 from colorama import init, Fore
 
@@ -19,14 +19,13 @@ def display_month_transactions(month_name):
         print(Fore.YELLOW + f"No transactions found for {month_name}.\n")
         return
 
-    # Group by date
     grouped = {}
     for date, txn_id, time_str, amount in data:
         if date not in grouped:
             grouped[date] = []
         grouped[date].append((txn_id, time_str, amount))
     monthly_total=0
-    # Print grouped transactions
+
     for date, transactions in grouped.items():
         print(Fore.CYAN + f"\nDATE: {date}")
         print(tabulate(transactions, headers=["Transaction ID", "Time", "Amount"], tablefmt="grid"))
@@ -37,7 +36,7 @@ def display_month_transactions(month_name):
     print(Fore.MAGENTA+f"TOTAL OF {month_name} month: {monthly_total}\n")
 
 def display_user():
-    con = connect_ur_db()
+    con = connect_to_db()
     cur = con.cursor()
     cur.execute(f"""
         SELECT user_id, password
