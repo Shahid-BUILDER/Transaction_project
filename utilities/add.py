@@ -18,7 +18,7 @@ def add_transaction(month_name, txn_id,date_str, time_str, amount):
         con.close()
 
 def add_users(user_name, passw):
-    con=connect_ur_db()
+    con=connect_to_db()
     if con is None:
         print("Database connection failed.")
     try:
