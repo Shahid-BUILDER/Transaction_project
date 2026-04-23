@@ -1,4 +1,4 @@
-from db_config import connect_to_db, connect_ur_db
+from db_config import connect_to_db
 from utilities.admin import menu
 from utilities.user import U_menu
 from utilities.helpers import login
