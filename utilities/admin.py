@@ -88,7 +88,7 @@ def menu():
                         clear_load()
                         display_month_transactions(month)
                         a=input("For exiting the Display area, please press N/n :")
-                        if a=="N" or a=="n":
+                        if a.lower()=='n':
                             break
                 elif o==2:
                     clear_load()
@@ -97,7 +97,7 @@ def menu():
                         clear_load()
                         display_user()
                         a=input("For exiting the Display area, please press N/n: ")
-                        if a=="N" or a=="n":
+                        if a.lower()=='n':
                             break
                 elif o==3:
                     break
@@ -129,7 +129,7 @@ def menu():
                     clear_load()
                     search_transaction(month, txn_id)
                     a=input("For exiting the Display area, please press N/n: ")
-                    if a=="N" or a=="n":
+                    if a.lower()=="n":
                         break
                 elif o==2:
                     clear_load()
@@ -137,7 +137,7 @@ def menu():
                     loading()
                     table="users"
                     search_user(table, user_id)
-                    if a=="N" or a=="n":
+                    if a.lower()=="n":
                         break
                 elif o==3:
                     break
