@@ -41,7 +41,7 @@ def record_checking(cur):
         except ValueError:
             print("Pls enter numerical value...")
             logging.error(f"User used invalid user ID : {txn_id}")
-    cur.execute("select 1 from SMS where seat=%s",(txn_id,))
+    cur.execute("select 1 from users where seat=%s",(txn_id,))
     return (True, txn_id) if cur.fetchone() else (False, txn_id)
 
 def get_valid_date(prompt="Enter Date (DD-MM-YYYY): "):
